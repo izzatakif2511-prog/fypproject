@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Portal</title>
+  <link rel="stylesheet" href="allscans.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== TOP HEADER ===== -->
+  <header class="topbar">
+
+    <div class="top-left">
+      <button onclick="window.location.href='http://localhost:8000/admin.php?logout=true'">
+        Back
+      </button>
+
+      <!-- LOGO -->
+      <div class="logo-box">
+        <div class="logo-icon">🛡️</div>
+        <div>
+          <div class="portal-title">Administrator Portal</div>
+          <div class="portal-sub">
+            Reports, Analytics & System Management
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-right">
+      <div class="admin-info">
+        <div class="admin-name">admin</div>
+        <div class="admin-role">Administrator</div>
+      </div>
+      <button class="admin-btn">Admin Access</button>
+    </div>
+
+  </header>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="menu-bar">
+    <a class="menu-item" href="report.html">Report</a>
+    <a class="menu-item" href="allscans.html">All Scans</a>
+    <a class="menu-item" href="sandbox.html">Sandbox</a>
+    <a class="menu-item" href="http://localhost:8000/threatAnalysis.php">Threat Analysis</a>
+    <a class="menu-item active" href="usermanagement.php">User Management</a>
+    <a class="menu-item" href="setting.php">Settings</a>
+  </nav>
+
+</body>
+
+<!-- ===== STATS CARDS ===== -->
+<section class="cards">
+  <div class="card blue">
+    <h2>10</h2>
+    <p>Total Scans</p>
+  </div>
+
+  <div class="card green">
+    <h2>6</h2>
+    <p>Clean Scans</p>
+  </div>
+
+  <div class="card red">
+    <h2>4</h2>
+    <p>Threats Detected</p>
+  </div>
+
+  <div class="card orange">
+    <h2>7</h2>
+    <p>Total Threats</p>
+  </div>
+</section>
+
+<!-- ===== SEARCH BAR ===== -->
+<section class="search-section">
+  <input type="text" placeholder="Search by user or device...">
+
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Clean</button>
+  <button class="filter-btn">Threats</button>
+  <button class="export-btn">
+    <i class="fas fa-download"></i> Export CSV
+  </button>
+</section>
+
+<!-- ===== TABLE ===== -->
+<section class="table-section">
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Device</th>
+        <th>Date & Time</th>
+        <th>Files</th>
+        <th>Threats</th>
+        <th>Duration</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Izzat</td>
+        <td>SanDisk Ultra USB 3.0 (32GB)</td>
+        <td>Dec 14, 2025<br><span>10:23 AM</span></td>
+        <td>247</td>
+        <td class="clean-text">0</td>
+        <td>2.1s</td>
+        <td><span class="status clean">Clean</span></td>
+      </tr>
+
+      <tr>
+        <td>Akif</td>
+        <td>Kingston DataTraveler (64GB)</td>
+        <td>Dec 14, 2025<br><span>09:15 AM</span></td>
+        <td>512</td>
+        <td class="threat-text">3</td>
+        <td>4.3s</td>
+        <td><span class="status threat">Threat</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+
+</html>

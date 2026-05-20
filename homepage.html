@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USB Malware Detection - Home</title>
+    <link rel="stylesheet" href="home-style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="ph ph-shield-check-fill"></i>
+            <div>
+                <h1>USB Malware Detection System</h1>
+                <p>Real-time protection against USB threats</p>
+            </div>
+        </div>
+        <a href="http://localhost:8000/admin.php" class="admin-portal"><i class="ph ph-gear"></i> Admin Portal</a>
+    </nav>
+
+    <main class="dashboard">
+        <section class="status-card">
+            <div class="status-icon">
+                <i class="ph ph-shield-check"></i>
+            </div>
+            <div class="status-content">
+                <h2>Welcome to USB Security Scanner</h2>
+                <p>Connect your USB device and click "Scan Device" to check for malware, viruses, and security threats.
+                    Our advanced sandbox environment will analyze all files safely.</p>
+                <div class="status-badges">
+                    <span><i class="ph ph-check-circle"></i> Real-time scanning</span>
+                    <span><i class="ph ph-shield"></i> Sandbox protection</span>
+                    <span><i class="ph ph-lightning"></i> Instant threat detection</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="devices-section">
+                <div class="section-header">
+                    <i class="ph ph-plugs-connected"></i> Connected USB Devices
+                </div>
+
+                <div class="device-item">
+                    <div class="device-info">
+                        <i class="ph ph-usb"></i>
+                        <div>
+                            <strong>SanDisk Ultra USB 3.0</strong>
+                            <p>SanDisk | Capacity: 32 GB</p>
+                        </div>
+                    </div>
+                    <button class="scan-btn"><i class="ph ph-magnifying-glass"></i> Scan Device</button>
+                </div>
+
+                <div class="device-item">
+                    <div class="device-info">
+                        <i class="ph ph-usb"></i>
+                        <div>
+                            <strong>Kingston DataTraveler</strong>
+                            <p>Kingston Technology | Capacity: 64 GB</p>
+                        </div>
+                    </div>
+                    <button class="scan-btn"><i class="ph ph-magnifying-glass"></i> Scan Device</button>
+                </div>
+            </section>
+
+            <aside class="recent-scans">
+                <div class="section-header">
+                    <i class="ph ph-activity"></i> Recent Scans
+                </div>
+                <div class="empty-state">
+                    <i class="ph ph-file-search"></i>
+                    <p>No scans yet</p>
+                    <span>Start scanning devices to see history</span>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+
+</html>

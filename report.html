@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrator Portal</title>
+  <link rel="stylesheet" href="report.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== TOP HEADER ===== -->
+  <header class="topbar">
+
+    <div class="top-left">
+      <button onclick="window.location.href='http://localhost:8000/admin.php?logout=true'">
+        Back
+      </button>
+
+      <!-- LOGO -->
+      <div class="logo-box">
+        <div class="logo-icon">🛡️</div>
+        <div>
+          <div class="portal-title">Administrator Portal</div>
+          <div class="portal-sub">
+            Reports, Analytics & System Management
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-right">
+      <div class="admin-info">
+        <div class="admin-name">admin</div>
+        <div class="admin-role">Administrator</div>
+      </div>
+      <button class="admin-btn">Admin Access</button>
+    </div>
+
+  </header>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="menu-bar">
+    <a class="menu-item" href="report.html">Report</a>
+    <a class="menu-item" href="allscans.html">All Scans</a>
+    <a class="menu-item" href="sandbox.html">Sandbox</a>
+    <a class="menu-item" href="http://localhost:8000/threatAnalysis.php">Threat Analysis</a>
+    <a class="menu-item active" href="usermanagement.php">User Management</a>
+    <a class="menu-item" href="setting.php">Settings</a>
+  </nav>
+
+</body>
+
+</html>
+
+<main class="dashboard-container">
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="card-header">
+        <div class="icon-box blue"><i class="ph ph-file-text"></i></div>
+        <span class="trend neutral">0%</span>
+      </div>
+      <div class="card-body">
+        <h2 class="stat-number">0</h2>
+        <p class="stat-label">Total Scans</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-header">
+        <div class="icon-box red"><i class="ph ph-warning"></i></div>
+        <span class="trend neutral">0%</span>
+      </div>
+      <div class="card-body">
+        <h2 class="stat-number">0</h2>
+        <p class="stat-label">Threats Detected</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-header">
+        <div class="icon-box green"><i class="ph ph-check-circle"></i></div>
+        <span class="trend neutral">0%</span>
+      </div>
+      <div class="card-body">
+        <h2 class="stat-number">0</h2>
+        <p class="stat-label">Clean Devices</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-header">
+        <div class="icon-box purple"><i class="ph ph-usb"></i></div>
+        <span class="trend neutral">0%</span>
+      </div>
+      <div class="card-body">
+        <h2 class="stat-number">0</h2>
+        <p class="stat-label">Active USB Devices</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <h3>Threat Detection Activity (24h)</h3>
+    </div>
+    <div class="chart-placeholder">
+      <p>No activity data available yet.</p>
+    </div>
+  </div>
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Portal</title>
+  <link rel="stylesheet" href="threat-analysis.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== TOP HEADER ===== -->
+  <header class="topbar">
+
+    <div class="top-left">
+      <button onclick="window.location.href='http://localhost:8000/admin.php?logout=true'">Back</button>
+
+      <div class="logo-box">
+        <div class="logo-icon"></div>
+        <div>
+          <div class="portal-title">Administrator Portal</div>
+          <div class="portal-sub">
+            Reports, Analytics & System Management
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-right">
+      <div class="admin-info">
+        <div class="admin-name">admin</div>
+        <div class="admin-role">Administrator</div>
+      </div>
+      <button class="admin-btn">Admin Access</button>
+    </div>
+
+  </header>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="menu-bar">
+    <a class="menu-item" href="report.html">Report</a>
+    <a class="menu-item" href="allscans.html">All Scans</a>
+    <a class="menu-item" href="sandbox.html">Sandbox</a>
+    <a class="menu-item" href="threat-analysis.html">Threat Analysis</a>
+    <a class="menu-item active" href="usermanagement.php">User Management</a>
+    <a class="menu-item" href="setting.php">Settings</a>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+
+    <!-- ===== STAT CARDS ===== -->
+    <section class="cards">
+      <div class="card">
+        <div class="icon red"></div>
+        <h2>108</h2>
+        <p>Total Threats</p>
+      </div>
+
+      <div class="card">
+        <div class="icon orange">!</div>
+        <h2>12</h2>
+        <p>Threat Types</p>
+      </div>
+
+      <div class="card">
+        <div class="icon green"></div>
+        <h2>95</h2>
+        <p>Blocked Attacks</p>
+      </div>
+
+      <div class="card">
+        <div class="icon blue"></div>
+        <h2>1,247</h2>
+        <p>Threat Signatures</p>
+      </div>
+    </section>
+
+    <!-- ===== CHARTS ===== -->
+    <section class="charts">
+
+      <!-- Pie -->
+      <div class="chart-box">
+        <h3>Threat Distribution</h3>
+        <div class="pie"></div>
+        <div class="pie-labels">
+          <span class="red-text">Trojans 55%</span>
+          <span class="orange-text">Worms 23%</span>
+          <span class="yellow-text">Adware 14%</span>
+          <span class="purple-text">Rootkits 9%</span>
+        </div>
+      </div>
+
+      <!-- Bar -->
+      <div class="chart-box">
+        <h3>Threat Detection Trend</h3>
+        <div class="bars">
+          <div class="bar" style="height:60px"><span>Jan</span></div>
+          <div class="bar" style="height:90px"><span>Feb</span></div>
+          <div class="bar" style="height:50px"><span>Mar</span></div>
+          <div class="bar" style="height:120px"><span>Apr</span></div>
+          <div class="bar" style="height:80px"><span>May</span></div>
+          <div class="bar" style="height:160px"><span>Jun</span></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== TABLE ===== -->
+    <section class="table-box">
+      <h3>Threat Intelligence Database</h3>
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Threat Name</th>
+          <th>Type</th>
+          <th>Severity</th>
+          <th>Description</th>
+          <th>Detections</th>
+          <th>MITRE ID</th>
+        </tr>
+
+        <?php foreach($threats as $threat): 
+        $mitre_info = get_mitre_info($threat['MitreID'], $mitre_data);
+      ?>
+        <tr>
+          <td>
+            <?= $threat['ID'] ?>
+          </td>
+          <td>
+            <?= $threat['ThreatName'] ?>
+          </td>
+          <td>
+            <?= $threat['Type'] ?>
+          </td>
+          <td>
+            <?= $threat['Severity'] ?>
+          </td>
+          <td>
+            <?= $threat['Description'] ?>
+          </td>
+          <td>
+            <?= $threat['Detections'] ?>
+          </td>
+          <td>
+            <?= $mitre_info['name'] ?> (
+            <?= $threat['MitreID'] ?>)
+          </td>
+          <td>
+            <?= $mitre_info['description'] ?>
+          </td>
+        </tr>
+        <?php endforeach; ?>
+
+      </table>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
